@@ -1,6 +1,5 @@
-<?php 
-
-require '../src/includeTemplate.php'; 
+<?php
+require '../src/includeTemplate.php';
 require '../data/passwords.php';
 require '../data/users.php';
 
@@ -11,12 +10,12 @@ $userEmail = '';
 $userPassword = '';
 $userName = '';
 
-if(isset($_POST['authorization'])){
+if (isset($_POST['authorization'])) {
     $userEmail = $_POST['email'];
     $userPassword = $_POST['password'];
     $usersCount = count($emails);
-    for($i = 0; $i < $usersCount; $i++){
-        if($emails[$i] === $userEmail && $passwords[$i] === $userPassword){
+    for ($i = 0; $i < $usersCount; $i++) {
+        if ($emails[$i] === $userEmail && $passwords[$i] === $userPassword) {
             $userName = "Пользователь";
             $isAuthorized = true;
             $showSuccess = true;
@@ -24,7 +23,7 @@ if(isset($_POST['authorization'])){
             break;
         }
     }
-    if(! $isAuthorized){
+    if (! $isAuthorized) {
         $showError = true;
     }
 }
@@ -53,7 +52,7 @@ if(isset($_POST['authorization'])){
                     </a>
                 </div>
                 <div>
-                    <?php if($isAuthorized) {?>
+                    <?php if ($isAuthorized) {?>
                         <ul class="flex justify-center sm:justify-end items-center space-x-8 text-sm">
                         <li>
                             <a class="text-gray-500 hover:text-orange" href="register.html">
@@ -72,7 +71,7 @@ if(isset($_POST['authorization'])){
                             </a>
                         </li>
                     </ul>
-                    <?php }else{ ?>
+                    <?php } else { ?>
                     <ul class="flex justify-center sm:justify-end items-center space-x-8 text-sm">
                         <li>
                             <a class="text-gray-500 hover:text-orange" href="register.html">
@@ -113,7 +112,7 @@ if(isset($_POST['authorization'])){
         <div class="py-4 pb-8">
             <h1 class="text-black text-3xl font-bold mb-4">Авторизация</h1>
 
-            <?php if($showError){?>
+            <?php if ($showError) {?>
                 <div class="my-4">
                     <div class="px-4 py-3 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
                         <p>
@@ -121,7 +120,7 @@ if(isset($_POST['authorization'])){
                         </p>
                     </div>
                 </div>
-            <?php }elseif($showSuccess){?>
+            <?php } elseif ($showSuccess) {?>
                 <div class="my-4">
                     <div class="px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">
                         <p>
@@ -129,8 +128,7 @@ if(isset($_POST['authorization'])){
                         </p>
                     </div>
                 </div>
-            <?php }?>
-            <? if(! $isAuthorized){?>
+            <?php } if (! $isAuthorized) {?>
             <form method="post">
                 <div class="mt-8 max-w-md">
                     <div class="grid grid-cols-1 gap-6">

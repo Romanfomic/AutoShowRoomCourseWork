@@ -1,1 +1,2 @@
-<?php require 'includeTemplate.php' ?>
+<?php
+    require 'includeTemplate.php';
