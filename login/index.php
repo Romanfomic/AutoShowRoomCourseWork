@@ -1,7 +1,5 @@
 <?php
 require '../src/includeTemplate.php';
-require '../data/passwords.php';
-require '../data/users.php';
 
 $isAuthorized = false;
 $showSuccess = false;
@@ -11,6 +9,8 @@ $userPassword = '';
 $userName = '';
 
 if (isset($_POST['authorization'])) {
+    require '../data/passwords.php';
+    require '../data/users.php';
     $userEmail = $_POST['email'];
     $userPassword = $_POST['password'];
     $usersCount = count($emails);
@@ -112,23 +112,11 @@ if (isset($_POST['authorization'])) {
         <div class="py-4 pb-8">
             <h1 class="text-black text-3xl font-bold mb-4">Авторизация</h1>
 
-            <?php if ($showError) {?>
-                <div class="my-4">
-                    <div class="px-4 py-3 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
-                        <p>
-                        <?php includeTemplate('messages/error_message.php', ['message' => 'Неверный email или пароль']);?>
-                        </p>
-                    </div>
-                </div>
-            <?php } elseif ($showSuccess) {?>
-                <div class="my-4">
-                    <div class="px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">
-                        <p>
-                        <?php includeTemplate('messages/success_message.php', ['message' => 'Вы успешно авторизовались']);?>    
-                        </p>
-                    </div>
-                </div>
-            <?php } if (! $isAuthorized) {?>
+            <?php if ($showError) {
+                includeTemplate('messages/error_message.php', ['message' => 'Неверный email или пароль']);
+            } elseif ($showSuccess) {
+                includeTemplate('messages/success_message.php', ['message' => 'Вы успешно авторизовались']);
+            } if (! $isAuthorized) {?>
             <form method="post">
                 <div class="mt-8 max-w-md">
                     <div class="grid grid-cols-1 gap-6">
