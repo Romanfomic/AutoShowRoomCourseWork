@@ -1,3 +1,5 @@
+<?php require 'src/core.php'; ?>
+
 <!doctype html>
 <html class="antialiased" lang="ru">
 <head>
