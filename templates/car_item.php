@@ -1,4 +1,4 @@
-<?php 
+<?php
 if ($oldPrice !== null) {
     $oldPrice = $oldPrice . " ₽";
 }
