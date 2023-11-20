@@ -10,6 +10,7 @@ $userEmail = "";
 if (isset($_COOKIE["email"])) {
     $userEmail = $_COOKIE["email"];
 }
+$_SESSION['expire'] = time() + 24*3600;
 ?>
 
 <div class="wrapper flex flex-1 flex-col bg-gray-100">
