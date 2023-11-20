@@ -13,7 +13,7 @@
     <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">
-    <?php includeTemplate('header.php', ['title' => 'Раздел 1']); ?>
+    <?php includeTemplate('header.php', ['title' => 'Раздел 1 с большим заголовком']); ?>
             
             <div class="space-y-4">
                 <p>Ниже представлен пример отображения контента</p>
