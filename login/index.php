@@ -72,8 +72,6 @@ if (isset($_POST['authorization'])) {
                 </div>
             </form>
             <?php }?>
-        </div>
-    </main>
     <?php includeTemplate('footer.php', []);?>
 </div>
 

@@ -16,10 +16,8 @@
     <?php
         includeTemplate('header.php', ['title' => 'Каталог']);
         includeTemplate('cars_catalog.php', []);
+        includeTemplate('footer.php', []);
     ?>
-        </div>
-    </main>
-    <?php includeTemplate('footer.php', []);?>
 </div>
 
 </body>

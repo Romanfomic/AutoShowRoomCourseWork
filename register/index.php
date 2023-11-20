@@ -57,8 +57,6 @@
                     </div>
                 </div>
             </form>
-        </div>
-    </main>
     <?php includeTemplate('footer.php', []);?>
 </div>
 
