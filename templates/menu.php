@@ -1,13 +1,3 @@
-<?php
-$menuArray = arraySort(getMenu());
-foreach ($menuArray as &$menuItem) {
-    $menuItem['title'] = cutString($menuItem['title']);
-    $menuItem['class'] = isCurrentPage($menuItem['path']) ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange';
-}
-unset($menuItem);
-
-?>
-
 <div class="border-b">
     <div class="container mx-auto overflow-hidden px-4 sm:px-6">
         <section class="bg-white py-4">

@@ -1,3 +1,11 @@
+<?php
+$menuArray = arraySort(getMenu());
+foreach ($menuArray as &$menuItem) {
+    $menuItem['title'] = cutString($menuItem['title']);
+    $menuItem['class'] = isCurrentPage($menuItem['path']) ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange';
+}
+?>
+
 <div class="wrapper flex flex-1 flex-col bg-gray-100">
     <header class="bg-white">
         <div class="border-b">
@@ -29,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <?php includeTemplate('menu.php', []); ?>  
+        <?php includeTemplate('menu.php', ["menuArray" => $menuArray,]); ?>  
     </header>
     <main class="flex-1 container mx-auto bg-white overflow-hidden px-4 sm:px-6">
         <div class="py-4 pb-8">

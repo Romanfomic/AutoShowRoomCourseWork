@@ -1,4 +1,7 @@
-<?php require '../src/core.php'; ?>
+<?php
+require '../src/core.php';
+$carArray = getCars();
+?>
 
 <!doctype html>
 <html class="antialiased" lang="ru">
@@ -15,7 +18,7 @@
 <body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">
     <?php
         includeTemplate('header.php', ['title' => 'Каталог']);
-        includeTemplate('cars_catalog.php', []);
+        includeTemplate('cars_catalog.php', ["carArray" => $carArray,]);
         includeTemplate('footer.php', []);
     ?>
 </div>
