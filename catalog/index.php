@@ -1,6 +1,7 @@
 <?php
 require '../src/core.php';
 $carArray = getCars();
+redirectIfAuthorized();
 ?>
 
 <!doctype html>

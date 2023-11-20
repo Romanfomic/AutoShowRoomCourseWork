@@ -52,8 +52,9 @@ function getMenu() :array
             'path' => '/catalog/',
             'sort' => 5,
             'class' => 'text-gray-600 hover:text-orange',
-        ],
+        ]
     ];
+
     return $menuArray;
 }
 

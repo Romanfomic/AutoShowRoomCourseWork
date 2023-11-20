@@ -1,27 +1,45 @@
 <?php
 require '../src/core.php';
-
-$isAuthorized = false;
+$isAuthorized = isAuthorized();
 $showSuccess = false;
 $showError = false;
 $userEmail = '';
+if(isset($_COOKIE['email']))
+{
+    $userEmail = $_COOKIE['email'];
+}
 $userPassword = '';
 $userName = '';
 
-if (isset($_POST['authorization'])) {
+if ($isAuthorized)
+{
+    $showSuccess = true;
+}
+
+if (isset($_POST['authorization']) && ! $isAuthorized) {
     require '../data/passwords.php';
     require '../data/users.php';
     $userEmail = $_POST['email'];
     $userPassword = $_POST['password'];
     $usersCount = count($emails);
-    for ($i = 0; $i < $usersCount; $i++) {
-        if ($emails[$i] === $userEmail && $passwords[$i] === $userPassword) {
-            $userName = "Пользователь";
-            $isAuthorized = true;
-            $showSuccess = true;
-            $showError = false;
-            break;
-        }
+    if($passwords[array_search($userEmail, $emails)] === $userPassword) {
+        authorized(['email' => $userEmail]);
+        $userName = "Пользователь";
+        $isAuthorized = true;
+        $showSuccess = true;
+        $showError = false;
+        setcookie(
+            "email",
+            $userEmail,
+            time() - 3600 * 24 * 30,
+            "/"
+        );
+        setcookie(
+            "email",
+            $userEmail,
+            time() + 3600 * 24 * 30,
+            "/"
+        );
     }
     if (! $isAuthorized) {
         $showError = true;
