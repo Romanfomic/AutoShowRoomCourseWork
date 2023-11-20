@@ -1,5 +1,3 @@
-<?php
-echo '
 <header class="bg-white">
         <div class="border-b">
             <div class="container mx-auto block overflow-hidden px-4 sm:px-6 sm:flex sm:justify-between sm:items-center py-4 space-y-4 sm:space-y-0">
@@ -46,5 +44,4 @@ echo '
     </header>
     <main class="flex-1 container mx-auto bg-white overflow-hidden px-4 sm:px-6">
         <div class="py-4 pb-8">
-            <h1 class="text-black text-3xl font-bold mb-4">' . $title . '</h1>
-';
+            <h1 class="text-black text-3xl font-bold mb-4"> <?=$title ?> </h1>
