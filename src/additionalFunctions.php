@@ -20,7 +20,7 @@ function arraySort(array $array, string $key = 'sort', int $sort = SORT_ASC): ar
     return $array;
 }
 
-function getMenu() :array
+function getMenu(bool $isAuthorize) :array
 {
     $menuArray = [
         [
@@ -46,14 +46,17 @@ function getMenu() :array
             'path' => '/inner3/',
             'sort' => 4,
             'class' => 'text-gray-600 hover:text-orange',
-        ],
-        [
+        ]
+    ];
+    if ($isAuthorize) {
+        $menuItem = [
             'title' => 'Каталог',
             'path' => '/catalog/',
             'sort' => 5,
             'class' => 'text-gray-600 hover:text-orange',
-        ]
-    ];
+        ];
+        array_push($menuArray, $menuItem);
+    }
 
     return $menuArray;
 }
