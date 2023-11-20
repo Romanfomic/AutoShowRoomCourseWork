@@ -13,7 +13,6 @@
     <link href="assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">
-<div class="wrapper flex flex-1 flex-col bg-gray-100">
     <?php includeTemplate('header.php', ['title' => 'Главная страница']); ?>            
             <div class="space-y-4">
                 <p>Ниже представлен пример отображения контента</p>

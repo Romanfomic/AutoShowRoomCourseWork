@@ -57,15 +57,16 @@ function getMenu() :array
     return $menuArray;
 }
 
-function isCurrentPage($url) {
+function isCurrentPage($url)
+{
     $currentPage = $_SERVER['REQUEST_URI'];
-    
+
     $parsedCurrentPage = parse_url($currentPage, PHP_URL_PATH);
     $parsedUrl = parse_url($url, PHP_URL_PATH);
 
     if ($parsedCurrentPage === $parsedUrl) {
         return true;
     }
-    
+
     return false;
 }

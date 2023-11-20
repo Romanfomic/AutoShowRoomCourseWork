@@ -42,7 +42,6 @@ if (isset($_POST['authorization'])) {
     <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">
-<div class="wrapper flex flex-1 flex-col bg-gray-100">
     <?php includeTemplate('header.php', ['title' => 'Авторизация']); ?>
 
             <?php if ($showError) {

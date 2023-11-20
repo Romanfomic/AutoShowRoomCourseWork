@@ -1,4 +1,5 @@
-<header class="bg-white">
+<div class="wrapper flex flex-1 flex-col bg-gray-100">
+    <header class="bg-white">
         <div class="border-b">
             <div class="container mx-auto block overflow-hidden px-4 sm:px-6 sm:flex sm:justify-between sm:items-center py-4 space-y-4 sm:space-y-0">
                 <div class="flex justify-center">
