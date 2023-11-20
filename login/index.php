@@ -1,5 +1,5 @@
 <?php
-require '../src/includeTemplate.php';
+require 'src/core.php';
 
 $isAuthorized = false;
 $showSuccess = false;

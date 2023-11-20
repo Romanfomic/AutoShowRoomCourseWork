@@ -19,3 +19,34 @@ function arraySort(array $array, string $key = 'sort', int $sort = SORT_ASC): ar
     });
     return $array;
 }
+
+function getMenu() :array
+{
+    $menuArray = [
+        [
+            'title' => 'Главная',
+            'path' => '/',
+            'sort' => 1,
+        ],
+        [
+            'title' => 'Раздел 1',
+            'path' => '/inner1',
+            'sort' => 2,
+        ],
+        [
+            'title' => 'Раздел 2',
+            'path' => '/inner2',
+            'sort' => 3,
+        ],
+        [
+            'title' => 'Раздел 3',
+            'path' => '/inner3',
+            'sort' => 4,
+        ],
+        [
+            'title' => 'Каталог',
+            'path' => '/catalog',
+            'sort' => 5,
+        ],
+    ];
+}

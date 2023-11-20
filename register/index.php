@@ -1,4 +1,4 @@
-<?php require '../src/includeTemplate.php'; ?>
+<?php require 'src/core.php'; ?>
 
 <!doctype html>
 <html class="antialiased" lang="ru">
