@@ -1,6 +1,5 @@
 <?php
 $isAuthorized = isAuthorized();
-
 $menuArray = arraySort(getMenu());
 foreach ($menuArray as &$menuItem) {
     $menuItem['title'] = cutString($menuItem['title']);
@@ -8,7 +7,19 @@ foreach ($menuArray as &$menuItem) {
 }
 $userEmail = "";
 if (isset($_COOKIE["email"])) {
-    $userEmail = $_COOKIE["email"];
+    $userEmail = $_COOKIE['email'];
+    setcookie(
+        "email",
+        $userEmail,
+        time() - 3600 * 24 * 30,
+        "/"
+    );
+    setcookie(
+        "email",
+        $userEmail,
+        time() + 3600 * 24 * 30,
+        "/"
+    );
 }
 ?>
 

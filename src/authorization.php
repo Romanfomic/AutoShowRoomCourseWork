@@ -19,8 +19,7 @@ function logout(): void
 
 function redirectIfAuthorized(string $location = '/'): void
 {
-    if(! isAuthorized())
-    {
+    if (! isAuthorized()) {
         header('Location: ' . $location);
         exit();
     }

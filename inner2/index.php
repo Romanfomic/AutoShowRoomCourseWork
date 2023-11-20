@@ -1,21 +1,5 @@
 <?php
 require '../src/core.php';
-if(isset($_COOKIE['email']))
-{
-    $userEmail = $_COOKIE['email'];
-    setcookie(
-        "email",
-        $userEmail,
-        time() - 3600 * 24 * 30,
-        "/"
-    );
-    setcookie(
-        "email",
-        $userEmail,
-        time() + 3600 * 24 * 30,
-        "/"
-    );
-}
 ?>
 
 <!doctype html>

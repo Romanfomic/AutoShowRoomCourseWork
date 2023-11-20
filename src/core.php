@@ -8,7 +8,6 @@ require 'getCars.php';
 
 require 'authorization.php';
 
-if (isset($_GET['logout']) && $_GET['logout'] === 'yes')
-{
+if (isset($_GET['logout']) && $_GET['logout'] === 'yes') {
     logout();
 }
