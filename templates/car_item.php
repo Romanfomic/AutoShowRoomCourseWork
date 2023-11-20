@@ -3,7 +3,10 @@
     <div class="px-6 py-4">
         <div class="text-black font-bold text-xl mb-2"><a class="hover:text-orange" href="#"><?=$name?></a></div>
         <p class="text-grey-darker text-base">
-            <span class="inline-block"><?=$price?> ₽</span><span class="inline-block line-through pl-6 text-gray-400"><?=$oldPrice?></span>
+            <span class="inline-block"><?=$price?> ₽</span>
+            <?php if ($oldPrice !== null) { ?>
+            <span class="inline-block line-through pl-6 text-gray-400"><?=$oldPrice?> ₽</span>
+            <?php }?>
         </p>
     </div>
 </div>
