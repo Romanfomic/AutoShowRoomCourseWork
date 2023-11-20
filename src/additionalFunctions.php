@@ -27,27 +27,45 @@ function getMenu() :array
             'title' => 'Главная',
             'path' => '/',
             'sort' => 1,
+            'class' => 'text-gray-600 hover:text-orange',
         ],
         [
-            'title' => 'Раздел 1',
-            'path' => '/inner1',
+            'title' => 'Раздел 1 с большим заголовком',
+            'path' => '/inner1/',
             'sort' => 2,
+            'class' => 'text-gray-600 hover:text-orange',
         ],
         [
             'title' => 'Раздел 2',
-            'path' => '/inner2',
+            'path' => '/inner2/',
             'sort' => 3,
+            'class' => 'text-gray-600 hover:text-orange',
         ],
         [
             'title' => 'Раздел 3',
-            'path' => '/inner3',
+            'path' => '/inner3/',
             'sort' => 4,
+            'class' => 'text-gray-600 hover:text-orange',
         ],
         [
             'title' => 'Каталог',
-            'path' => '/catalog',
+            'path' => '/catalog/',
             'sort' => 5,
+            'class' => 'text-gray-600 hover:text-orange',
         ],
     ];
     return $menuArray;
+}
+
+function isCurrentPage($url) {
+    $currentPage = $_SERVER['REQUEST_URI'];
+    
+    $parsedCurrentPage = parse_url($currentPage, PHP_URL_PATH);
+    $parsedUrl = parse_url($url, PHP_URL_PATH);
+
+    if ($parsedCurrentPage === $parsedUrl) {
+        return true;
+    }
+    
+    return false;
 }
