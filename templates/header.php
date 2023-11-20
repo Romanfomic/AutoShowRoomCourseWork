@@ -28,19 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="border-b">
-            <div class="container mx-auto overflow-hidden px-4 sm:px-6">
-                <section class="bg-white py-4">
-                    <ul class="list-inside bullet-list-item flex flex-wrap justify-between -mx-5 -my-2">
-                        <li class="px-5 py-2"><a class="text-gray-600 hover:text-orange" href="/">Главная</a></li>
-                        <li class="px-5 py-2"><a class="text-orange cursor-default"      href="/inner1">Раздел 1</a></li>
-                        <li class="px-5 py-2"><a class="text-gray-600 hover:text-orange" href="/inner2">Раздел 2</a></li>
-                        <li class="px-5 py-2"><a class="text-gray-600 hover:text-orange" href="/inner3">Раздел 3</a></li>
-                        <li class="px-5 py-2"><a class="text-gray-600 hover:text-orange" href="/catalog">Каталог</a></li>
-                    </ul>
-                </section>
-            </div>
-        </div>
+        <?php includeTemplate('menu.php', []); ?>  
     </header>
     <main class="flex-1 container mx-auto bg-white overflow-hidden px-4 sm:px-6">
         <div class="py-4 pb-8">

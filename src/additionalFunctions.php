@@ -49,4 +49,5 @@ function getMenu() :array
             'sort' => 5,
         ],
     ];
+    return $menuArray;
 }
