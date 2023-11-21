@@ -29,12 +29,6 @@ if (isset($_POST['authorization']) && ! $isAuthorized) {
         setcookie(
             "email",
             $userEmail,
-            time() - 3600 * 24 * 30,
-            "/"
-        );
-        setcookie(
-            "email",
-            $userEmail,
             time() + 3600 * 24 * 30,
             "/"
         );
