@@ -2,20 +2,7 @@
 require 'src/core.php';
 ?>
 
-<!doctype html>
-<html class="antialiased" lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="assets/css/form.min.css" rel="stylesheet">
-    <link href="assets/css/tailwind.css" rel="stylesheet">
-    <link href="assets/css/base.css" rel="stylesheet">
-
-    <title>Рога и Сила - Главная страница</title>
-    <link href="assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
-</head>
-<body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">
-    <?php includeTemplate('header.php', ['title' => 'Главная страница']); ?>            
+    <?php includeTemplate('header.php', ['title' => 'Главная страница', 'mainTitle' => 'Рога и Сила - Главная страница']); ?>            
             <div class="space-y-4">
                 <p>Ниже представлен пример отображения контента</p>
 
@@ -68,7 +55,3 @@ require 'src/core.php';
                 <p>Крокодиловая ферма Самут Пракан - самая большая в мире, однако коневодство недоступно берёт кристаллический фундамент, несмотря на то, что все здесь выстроено в оригинальном славянско-турецком стиле. Кампос-серрадос притягивает белый саксаул, при этом к шесту прикрепляют ярко раскрашенных бумажных или матерчатых карпов, по одному на каждого мальчика в семье.</p>
             </div>
     <?php includeTemplate('footer.php', []);?>
-</div>
-
-</body>
-</html>
