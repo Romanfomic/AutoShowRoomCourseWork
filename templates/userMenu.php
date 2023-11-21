@@ -1,6 +1,6 @@
 <ul class="flex justify-center sm:justify-end items-center space-x-8 text-sm">
     <li>
-        <a class="text-gray-500 hover:text-orange" href="#">
+        <a class="text-gray-500 hover:text-orange" href="/profile">
             <svg xmlns="http://www.w3.org/2000/svg" class="inline-block text-orange h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z" />
             </svg>
