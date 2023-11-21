@@ -1,5 +1,6 @@
 <?php
 require '../src/core.php';
+
 ?>
 
     <?php includeTemplate('header.php', ['title' => 'Регистрация', 'mainTitle' => 'Рога и Сила - Главная страница']); ?>
@@ -39,7 +40,7 @@ require '../src/core.php';
                             <button type="submit" class="inline-block bg-orange hover:bg-opacity-70 focus:outline-none text-white font-bold py-2 px-4 rounded">
                                 Регистрация
                             </button>
-                            <a href="login.html" class="inline-block hover:underline focus:outline-none font-bold py-2 px-4 rounded">
+                            <a href="/login" class="inline-block hover:underline focus:outline-none font-bold py-2 px-4 rounded">
                                 У меня уже есть аккаунт
                             </a>
                         </div>

@@ -21,7 +21,7 @@ function findGroups(string $id): array
         WHERE UserGroups.userId = :id";
 
     $querry = $connection->prepare($sql);
-    
+
     $querry->bindParam(':id', $id, PDO::PARAM_INT);
 
     $querry->execute();
