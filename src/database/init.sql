@@ -1,3 +1,5 @@
+use roman_f_qschool_test;
+
 CREATE TABLE Users (
   isActive BOOLEAN,
   fullName VARCHAR(255),

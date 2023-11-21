@@ -4,6 +4,7 @@ require '../src/core.php';
 $isAuthorized = isAuthorized();
 $showSuccess = false;
 $showError = false;
+$errorMsg = '';
 $userEmail = '';
 if (isset($_COOKIE['email'])) {
     $userEmail = $_COOKIE['email'];
@@ -19,7 +20,10 @@ if (isset($_POST['authorization']) && ! $isAuthorized) {
 
     $user = findUser($userEmail);
 
-    if ($user && password_verify($userPassword, $user['password'])) {
+    if ($user['isActive'] === 0) {
+        $showError = true;
+        $errorMsg = 'Доступ запрещен';
+    } elseif ($user && password_verify($userPassword, $user['password'])) {
         authorized(['email' => $userEmail]);
         $isAuthorized = true;
         $showSuccess = true;
@@ -30,9 +34,9 @@ if (isset($_POST['authorization']) && ! $isAuthorized) {
             time() + 3600 * 24 * 30,
             "/"
         );
-    }
-    if (! $isAuthorized) {
+    } elseif (! $isAuthorized) {
         $showError = true;
+        $errorMsg = 'Неверный email или пароль';
     }
 }
 ?>
@@ -40,7 +44,7 @@ if (isset($_POST['authorization']) && ! $isAuthorized) {
     <?php includeTemplate('header.php', ['title' => 'Авторизация', 'mainTitle' => 'Рога и Сила - Главная страница']); ?>
 
             <?php if ($showError) {
-                includeTemplate('messages/error_message.php', ['message' => 'Неверный email или пароль']);
+                includeTemplate('messages/error_message.php', ['message' => $errorMsg]);
             } elseif ($showSuccess) {
                 includeTemplate('messages/success_message.php', ['message' => 'Вы успешно авторизовались']);
             } if (! $isAuthorized) {?>
