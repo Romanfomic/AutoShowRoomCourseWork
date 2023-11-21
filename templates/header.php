@@ -6,14 +6,8 @@ foreach ($menuArray as &$menuItem) {
     $menuItem['class'] = isCurrentPage($menuItem['path']) ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange';
 }
 $userEmail = "";
-if (isset($_COOKIE["email"])) {
+if (isAuthorized()) {
     $userEmail = $_COOKIE['email'];
-    setcookie(
-        "email",
-        $userEmail,
-        time() - 3600 * 24 * 30,
-        "/"
-    );
     setcookie(
         "email",
         $userEmail,
