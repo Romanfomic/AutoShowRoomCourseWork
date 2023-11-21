@@ -26,7 +26,7 @@ if (isAuthorized()) {
     <link href="/assets/css/tailwind.css" rel="stylesheet">
     <link href="/assets/css/base.css" rel="stylesheet">
 
-    <title><?=$mainTite?></title>
+    <title><?=$mainTitle?></title>
     <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">

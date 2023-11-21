@@ -1,6 +1,6 @@
 <?php
 
-function getCars(): array
+function getCars(int $count = 0): array
 {
     $cars = [
         [

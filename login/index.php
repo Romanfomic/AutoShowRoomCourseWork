@@ -1,5 +1,6 @@
 <?php
 require '../src/core.php';
+
 $isAuthorized = isAuthorized();
 $showSuccess = false;
 $showError = false;
@@ -7,22 +8,19 @@ $userEmail = '';
 if (isset($_COOKIE['email'])) {
     $userEmail = $_COOKIE['email'];
 }
-$userPassword = '';
-$userName = '';
 
 if ($isAuthorized) {
     $showSuccess = true;
 }
 
 if (isset($_POST['authorization']) && ! $isAuthorized) {
-    require '../data/passwords.php';
-    require '../data/users.php';
     $userEmail = $_POST['email'];
     $userPassword = $_POST['password'];
-    $usersCount = count($emails);
-    if ($passwords[array_search($userEmail, $emails)] === $userPassword) {
+
+    $user = findUser($userEmail);
+
+    if ($user && password_verify($userPassword, $user['password'])) {
         authorized(['email' => $userEmail]);
-        $userName = "Пользователь";
         $isAuthorized = true;
         $showSuccess = true;
         $showError = false;
