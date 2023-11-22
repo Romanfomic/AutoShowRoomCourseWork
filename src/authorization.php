@@ -25,6 +25,14 @@ function redirectIfAuthorized(string $location = '/'): void
     }
 }
 
+function redirectIfNotAuthorized(string $location = '/'): void
+{
+    if (isAuthorized()) {
+        header('Location: ' . $location);
+        exit();
+    }
+}
+
 function currentUser(): array
 {
     return $_SESSION['user'] ?? [];

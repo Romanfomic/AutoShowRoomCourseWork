@@ -28,3 +28,17 @@ function findGroups(string $id): array
 
     return $querry->fetchAll(PDO::FETCH_ASSOC) ?: [];
 }
+
+function createUser($user = [])
+{
+    $connection = connectToDB();
+    $password = password_hash($user['password'], PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO `Users` 
+            (`isActive`, `fullName`, `email`, `phone`, `password`, `isEmailNotificationEnabled`) 
+            VALUES 
+            (?, ?, ?, ?, ?, ?)";
+
+    $querry = $connection->prepare($sql);
+    $querry->execute([$user['isActive'], $user['name'], $user['email'], $user['phone'], $password, $user['isEmailNotificationEnabled']]);
+}

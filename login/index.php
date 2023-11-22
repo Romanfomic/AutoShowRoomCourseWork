@@ -1,5 +1,6 @@
 <?php
 require '../src/core.php';
+redirectIfNotAuthorized();
 
 $isAuthorized = isAuthorized();
 $showSuccess = false;
