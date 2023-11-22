@@ -47,7 +47,7 @@ if (isset($_POST['registration'])) {
             } elseif ($showSuccess) {
                 includeTemplate('messages/success_message.php', ['message' => 'Вы успешно зарегистрированы']);
             }
-                ?>
+            ?>
             
             <form method="post">
                 <div class="mt-8 max-w-md">
