@@ -15,9 +15,9 @@ function findGroups(string $id): array
 {
     $connection = connectToDB();
 
-    $sql = "SELECT Groups.*
-        FROM Groups
-        JOIN UserGroups ON Groups.id = UserGroups.groupId
+    $sql = "SELECT Groupss.*
+        FROM Groupss
+        JOIN UserGroups ON Groupss.id = UserGroups.groupId
         WHERE UserGroups.userId = :id";
 
     $querry = $connection->prepare($sql);

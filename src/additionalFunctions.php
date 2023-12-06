@@ -30,21 +30,15 @@ function getMenu(bool $isAuthorize) :array
             'class' => 'text-gray-600 hover:text-orange',
         ],
         [
-            'title' => 'Раздел 1 с большим заголовком',
+            'title' => 'О нас',
             'path' => '/inner1/',
             'sort' => 2,
             'class' => 'text-gray-600 hover:text-orange',
         ],
         [
-            'title' => 'Раздел 2',
+            'title' => 'Контакты',
             'path' => '/inner2/',
             'sort' => 3,
-            'class' => 'text-gray-600 hover:text-orange',
-        ],
-        [
-            'title' => 'Раздел 3',
-            'path' => '/inner3/',
-            'sort' => 4,
             'class' => 'text-gray-600 hover:text-orange',
         ]
     ];

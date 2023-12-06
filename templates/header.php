@@ -5,16 +5,17 @@ foreach ($menuArray as &$menuItem) {
     $menuItem['title'] = cutString($menuItem['title']);
     $menuItem['class'] = isCurrentPage($menuItem['path']) ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange';
 }
-$userEmail = "";
-if (isAuthorized()) {
-    $userEmail = $_COOKIE['email'];
-    setcookie(
-        "email",
-        $userEmail,
-        time() + 3600 * 24 * 30,
-        "/"
-    );
-}
+// $userEmail = "";
+// if (isAuthorized()) {
+//     $userEmail = $_COOKIE['email'];
+//     //$userEmail = "admin@example.com";
+//     setcookie(
+//         "email",
+//         $userEmail,
+//         time() + 3600 * 24 * 30,
+//         "/"
+//     );
+// }
 ?>
 
 <!doctype html>
@@ -27,7 +28,6 @@ if (isAuthorized()) {
     <link href="/assets/css/base.css" rel="stylesheet">
 
     <title><?=$mainTitle?></title>
-    <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">
 <div class="wrapper flex flex-1 flex-col bg-gray-100">
@@ -36,7 +36,7 @@ if (isAuthorized()) {
             <div class="container mx-auto block overflow-hidden px-4 sm:px-6 sm:flex sm:justify-between sm:items-center py-4 space-y-4 sm:space-y-0">
                 <div class="flex justify-center">
                     <a href="/" class="inline-block sm:inline hover:opacity-75">
-                        <img src="/assets/images/logo.png" width="222" height="30" alt="">
+                        <span style="font-size: 30px;">Black Lightning</span>
                     </a>
                 </div>
                 <div>

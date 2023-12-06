@@ -1,6 +1,9 @@
 <?php
 require '../src/core.php';
 redirectIfAuthorized();
+$userGroups = [];
+$user = [];
+
 if (isset($_COOKIE['email'])) {
     $userEmail = $_COOKIE['email'];
     $user = findUser($userEmail);
@@ -8,7 +11,7 @@ if (isset($_COOKIE['email'])) {
 }
 ?>
 
-<?php includeTemplate('header.php', ['title' => 'Профиль', 'mainTitle' => 'Рога и Сила - Главная страница']); ?>
+<?php includeTemplate('header.php', ['title' => 'Профиль', 'mainTitle' => 'Профиль']); ?>
 
 <div class="bg-white w-full border border-gray-100 rounded overflow-hidden shadow-lg hover:shadow-2xl pt-4">
     <div class="px-6 py-4">
@@ -20,8 +23,6 @@ if (isset($_COOKIE['email'])) {
         <p class="text-grey-darker text-base">Почта: <?=$user['email']?></p>
         <br>
         <p class="text-grey-darker text-base">Телефон: <?=$user['phone']?></p>
-        <br>
-        <p class="text-grey-darker text-base">Пароль: <?=$user['password']?></p>
         <br>
         <p class="text-grey-darker text-base">
             Уведомления на почту: <?= $user['isEmailNotificationEnabled'] == 1 ? 'включены' : 'отключены' ?>

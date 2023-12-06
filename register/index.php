@@ -41,7 +41,7 @@ if (isset($_POST['registration'])) {
 
 ?>
 
-    <?php includeTemplate('header.php', ['title' => 'Регистрация', 'mainTitle' => 'Рога и Сила - Главная страница']); ?>
+    <?php includeTemplate('header.php', ['title' => 'Регистрация', 'mainTitle' => 'Регистрация']); ?>
             <?php if ($showError) {
                 includeTemplate('messages/error_message.php', ['message' => $errorMsg]);
             } elseif ($showSuccess) {

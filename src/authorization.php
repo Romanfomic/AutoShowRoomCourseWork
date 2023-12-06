@@ -15,6 +15,7 @@ function logout(): void
 {
     $_SESSION['auth'] = false;
     $_SESSION['user'] = [];
+    
 }
 
 function redirectIfAuthorized(string $location = '/'): void

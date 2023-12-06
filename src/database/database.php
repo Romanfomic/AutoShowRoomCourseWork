@@ -9,16 +9,16 @@ function connectToDB(): PDO
     }
 
     $config = [
-        'hostname' => 'newgrade-crt',
-        'username' => 'test',
-        'password' => 'test',
-        'database' => 'roman_f_qschool_test',
+        'hostname' => 'localhost',
+        'username' => 'root',
+        'password' => '',
+        'database' => 'rbd_project',
     ];
 
     $connection = new PDO(
         "mysql:host={$config['hostname']};dbname={$config['database']}",
         $config['username'],
-        $config['password'],
+        $config['password']
     );
     return $connection;
 }

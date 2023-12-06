@@ -1,6 +1,7 @@
-use roman_f_qschool_test;
+CREATE DATABASE rbd_project;
+use rbd_project;
 
-CREATE TABLE Groups (
+CREATE TABLE Groupss (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255),
   description VARCHAR(255)
@@ -20,27 +21,47 @@ CREATE TABLE UserGroups (
   userId INT,
   groupId INT,
   FOREIGN KEY (userId) REFERENCES Users(id),
-  FOREIGN KEY (groupId) REFERENCES Groups(id),
+  FOREIGN KEY (groupId) REFERENCES Groupss(id),
   PRIMARY KEY (userId, groupId)
 );
 
-CREATE TABLE MessageSections (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  sectionName VARCHAR(255),
-  colorLabel VARCHAR(255),
-  creationDateTime DATETIME,
-  createdByUser VARCHAR(255),
-  parentSectionId INT,
-  FOREIGN KEY (parentSectionId) REFERENCES MessageSections(id)
+
+
+CREATE TABLE CarBrand (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  brand VARCHAR(50),
+  model VARCHAR(100),
+  description VARCHAR(100)
 );
 
-CREATE TABLE Messages (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  msgText TEXT,
-  title VARCHAR(255),
-  creationDateTime DATETIME,
-  senderUser VARCHAR(255),
-  receiverUser VARCHAR(255),
-  sectionId INT,
-  FOREIGN KEY (sectionId) REFERENCES MessageSections(Id)
+CREATE TABLE CarColor (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  color VARCHAR(50),
+  brightness INT,
+  description VARCHAR(100)
+);
+
+CREATE TABLE CarBodyType (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  body_type VARCHAR(100),
+  description VARCHAR(100)
+);
+
+CREATE TABLE FuelType (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  fuel_type VARCHAR(100),
+  fuel_count INT,
+  description VARCHAR(100)
+);
+
+CREATE TABLE Cars (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  brand_id INT,
+  color_id INT,
+  body_type_id INT,
+  fuel_type_id INT,
+  FOREIGN KEY (brand_id) REFERENCES CarBrand(id),
+  FOREIGN KEY (color_id) REFERENCES CarColor(id),
+  FOREIGN KEY (body_type_id) REFERENCES CarBodyType(id),
+  FOREIGN KEY (fuel_type_id) REFERENCES FuelType(id)
 );

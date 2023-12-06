@@ -1,4 +1,4 @@
-INSERT INTO `Groups`
+INSERT INTO `Groupss`
     (`name`, `description`)
     VALUES
     ('Группа 1', 'Описание группы 1'),
@@ -10,8 +10,8 @@ INSERT INTO `Groups`
 INSERT INTO `Users`
     (`isActive`, `fullName`, `email`, `phone`, `password`, `isEmailNotificationEnabled`)
     VALUES
-    (1, 'Иванов Иван Иванович', 'admin@example.com', '88005553535', '$2y$10$MbceiVuLgyEBMMVE9YmZf.KHs2oMP4JIdffsY0MFHyFXnqJGXtKRu', 'false'),
-    (0, 'Петров Петр Петрович', 'user_1@example.com', '88008008080', '$2y$10$LN4WUhPvg12PMwruyZ/t5uizRvBq.j3rPrdPFvot5qHQyRT7yxbNi', 'false')
+    (1, 'Иванов Иван Иванович', 'admin@example.com', '88005553535', '$2y$10$MbceiVuLgyEBMMVE9YmZf.KHs2oMP4JIdffsY0MFHyFXnqJGXtKRu', false),
+    (0, 'Петров Петр Петрович', 'user_1@example.com', '88008008080', '$2y$10$LN4WUhPvg12PMwruyZ/t5uizRvBq.j3rPrdPFvot5qHQyRT7yxbNi', false)
 ;
 
 INSERT INTO `UserGroups`

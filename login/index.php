@@ -42,7 +42,7 @@ if (isset($_POST['authorization']) && ! $isAuthorized) {
 }
 ?>
 
-    <?php includeTemplate('header.php', ['title' => 'Авторизация', 'mainTitle' => 'Рога и Сила - Главная страница']); ?>
+    <?php includeTemplate('header.php', ['title' => 'Авторизация', 'mainTitle' => 'Авторизация']); ?>
 
             <?php if ($showError) {
                 includeTemplate('messages/error_message.php', ['message' => $errorMsg]);
@@ -64,7 +64,7 @@ if (isset($_POST['authorization']) && ! $isAuthorized) {
                             <button name="authorization" type="submit" class="inline-block bg-orange hover:bg-opacity-70 focus:outline-none text-white font-bold py-2 px-4 rounded">
                                 Войти
                             </button>
-                            <a href="register.html" class="inline-block hover:underline focus:outline-none font-bold py-2 px-4 rounded">
+                            <a href="/register" class="inline-block hover:underline focus:outline-none font-bold py-2 px-4 rounded">
                                 У меня нет аккаунта
                             </a>
                         </div>
